@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="jumbotron container">
+    <center><u><h1>Order Form</h1></u></center>
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Add Order" class="btn btn-success col-6">
+        <input type="reset" value="Reset" class="btn btn-warning col-6">
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="jumbotron container">
+    <center><h1>Sign Up Form</h1></center>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="SignUp" class="btn btn-success">
+    </form>
+</div>
+{% endblock %}

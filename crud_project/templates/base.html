@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">E-Mart</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'order_url' %}">Add Order</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'all_order_url' %}">Show Order</a>
+      </li>
+      {% if user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'logout_url' %}">Logout</a>
+      </li>
+      {% else %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'login_url' %}">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'sign_up_url' %}">Sign Up</a>
+      </li>
+      {% endif %}
+
+    </ul>
+  </div>
+</nav>
+
+
+{% block content %}
+
+
+{% endblock %}
+</body>
+</html>
